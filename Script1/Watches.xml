@@ -1,0 +1,4 @@
+﻿<Properties>
+  <WatchEntry0 value="Browser(&quot;Advantage Shopping&quot;).Page(&quot;Advantage Shopping&quot;).WebButton(&quot;pay_now_btn_SAFEPAY&quot;).GetROProperty(&quot;class&quot;)" />
+  <WatchEntry1 value="Browser(&quot;Advantage Shopping&quot;).Page(&quot;Advantage Shopping&quot;).WebButton(&quot;pay_now_btn_SAFEPAY&quot;).GetROProperty(&quot;class&quot;)" />
+</Properties>
