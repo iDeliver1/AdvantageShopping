@@ -1,4 +1,10 @@
-﻿Browser("Advantage Shopping").Page("Advantage Shopping").WebButton("next_btn").Click
+﻿Dim Safe_Username
+Dim Safe_Password
+
+Safe_Username = DataTable.Value("Safe_Username",Global)
+Safe_Password = DataTable.Value("Safe_Password",Global)
+
+Browser("Advantage Shopping").Page("Advantage Shopping").WebButton("next_btn").Click
 
 If Browser("Advantage Shopping").Page("Advantage Shopping").WebRadioGroup("safepay").Exist Then
 	Browser("Advantage Shopping").Page("Advantage Shopping").WebRadioGroup("safepay").Select "#0"
@@ -10,7 +16,7 @@ Else
 End If
 
 If Browser("Advantage Shopping").Page("Advantage Shopping").WebEdit("safepay_username").Exist(2) Then
-	Browser("Advantage Shopping").Page("Advantage Shopping").WebEdit("safepay_username").Set "iDeliver"
+	Browser("Advantage Shopping").Page("Advantage Shopping").WebEdit("safepay_username").Set Safe_Username
 		Call fPass_report("Safepay_username","Enter on the Safepay_username")
 		Call fExcelreport("Safepay_username","Enter on the Safepay_username","PASS",Time,Date)
 Else
@@ -19,7 +25,7 @@ Else
 End If
 
 If Browser("Advantage Shopping").Page("Advantage Shopping").WebEdit("safepay_password").Exist(2) Then
-	Browser("Advantage Shopping").Page("Advantage Shopping").WebEdit("safepay_password").Set "iDeliver1"
+	Browser("Advantage Shopping").Page("Advantage Shopping").WebEdit("safepay_password").Set Safe_Password
 		Call fPass_report("Safepay_password","Enter on the Safepay_password")
 		Call fExcelreport("Safepay_password","Enter on the Safepay_password","PASS",Time,Date)
 Else
